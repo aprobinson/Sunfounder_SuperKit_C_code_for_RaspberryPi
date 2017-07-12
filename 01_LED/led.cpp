@@ -9,9 +9,6 @@
 // Std Lib Includes
 #include <iostream>
 
-// Wiring Pi Includes
-#include <wiringPi.h>
-
 // Qt Includes
 #include <QtGui/QApplication>
 #include <QtGui/QGraphicsView>

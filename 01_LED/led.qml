@@ -1,5 +1,5 @@
 import QtQuick 1.1
-import Sunfounder.SuperKt 1.0
+import Sunfounder.SuperKit 1.0
 
 Rectangle {
     id: led_window
@@ -16,6 +16,8 @@ Rectangle {
         width: 200
         height: 200
         color: "gray"
+	anchors.horizontalCenter: led_window.horizontalCenter
+	anchors.verticalCenter: led_window.verticalCenter
 
         Text{
             id: led_button_text
@@ -24,7 +26,7 @@ Rectangle {
 
             text: "off"
             font.pointSize: 24
-            color: "dark-gray"
+            color: "darkgray"
         }
 
         MouseArea {
@@ -35,14 +37,14 @@ Rectangle {
                 if( pin.isVoltageHigh ) {
                     pin.setPinVoltageToLow();
 
-                    led_button_text.text = "on"
-                    led_button_text.color = "green"
+                    led_button_text.text = "ON"
+                    led_button_text.color = "red"
                 }
                 else {
                     pin.setPinVoltageToHigh();
 
                     led_button_text.text = "off"
-                    led_button_text.color = "gray"
+                    led_button_text.color = "darkgray"
                 }
             }
         }

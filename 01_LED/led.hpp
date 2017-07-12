@@ -9,6 +9,12 @@
 #ifndef LED_HPP
 #define LED_HPP
 
+// Wiring Pi Includes
+#include <wiringPi.h>
+
+// Qt Includes
+#include <QtCore/QObject>
+
 //! The GPIO pin class
 class GPIOPin : public QObject
 {
