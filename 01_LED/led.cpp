@@ -14,8 +14,9 @@
 
 // Qt Includes
 #include <QtGui/QApplication>
-#include <QGraphicsView>
-#include <QtDeclarative>
+#include <QtGui/QGraphicsView>
+#include <QtDeclarative/QDeclarativeView>
+#include <QtDeclarative/QtDeclarative>
 
 #define  LedPin    0
 
@@ -29,8 +30,9 @@ class GPIOPin : public QObject
 public:
 
   //! Constructor
-  GPIOPin( QDeclarativeItem* parent = 0 )
-    : d_pin_id( 0 ),
+  GPIOPin( QObject* parent = 0 )
+    : QObject( parent ),
+      d_pin_id( 0 ),
       d_pin_voltage_high( false )
   {
     this->activatePin();
@@ -38,7 +40,7 @@ public:
   }
 
   //! Destructor
-  virtual !GPIOPin()
+  virtual ~GPIOPin()
   { /* ... */ }
 
   //! Set the pin that will be managed
